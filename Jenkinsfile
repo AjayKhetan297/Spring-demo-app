@@ -11,6 +11,11 @@ pipeline {
         git 'https://github.com/AjayKhetan297/Spring-demo-app.git'
       }
     }
+     stage ('Build jar') {
+            steps {
+                sh 'mvn clean install' 
+            }
+            }
     stage('Building image') {
       steps{
         script {
