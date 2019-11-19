@@ -5,13 +5,17 @@ pipeline {
     dockerImage = ''
   }
   agent any
+  tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
   stages {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/AjayKhetan297/Spring-demo-app.git'
       }
     }
-     stage ('Build jar') {
+     stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
