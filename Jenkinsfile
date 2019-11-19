@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage =  docker.build("ajayk333/spring-boot-docker-demo-1")
+          dockerImage =  docker.build("ajayk333/spring-boot-docker-demo")
         }
       }
     }
