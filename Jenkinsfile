@@ -13,7 +13,7 @@ pipeline {
     }
      stage ('Build jar') {
             steps {
-                sh 'mvn clean install' 
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
             }
     stage('Building image') {
